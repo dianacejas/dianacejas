@@ -33,27 +33,27 @@ TRAVELLER_COUNT = 900
 HOLD_PARTICLE_COUNT = 2_400
 SEED = 314159
 LOGO_SUFFIXES = {".png", ".webp"}
-LOGO_ALIASES = {"kube": "kubernetes"}
-PREFERRED_LOGO_ORDER = ("linux", "kubernetes")
+LOGO_ALIASES = {"py": "python"}
+PREFERRED_LOGO_ORDER = ("python-logo", "java-logo")
 
 YAML_ROWS = [
     (0, "profile", ""),
-    (1, "subject", "Maria Claudia"),
-    (1, "role", "DevOps Engineer"),
-    (1, "origin", "Rosario, Argentina"),
-    (1, "focus", "CI/CD · Cloud Native · IaC"),
-    (1, "status", "Automatizacion · Escalado · Despliegue"),
-    (1, "toolchain", "Terraform · Helm · GitHub Actions"),
+    (1, "subject", "Diana Cejas"),
+    (1, "role", "Full Stack Developer"),
+    (1, "origin", "Santiago del Estero, Argentina"),
+    (1, "focus", "React · Node.js · TypeScript"),
+    (1, "status", "Full Stack · Web · Bases de Datos"),
+    (1, "toolchain", "Java · Python · C# · JavaScript"),
     (0, "stack", ""),
-    (1, "cloud", "AWS · Azure"),
-    (1, "containers", "Kubernetes · Docker · Helm"),
-    (1, "iac", "Terraform · Ansible"),
-    (1, "observability", "Prometheus · Datadog · Sentry"),
-    (1, "automation", "Python · Bash · JavaScript"),
+    (1, "languages", "Java · Python · C#"),
+    (1, "web", "React · Node.js"),
+    (1, "frontend", "JavaScript · TypeScript · HTML · CSS"),
+    (1, "databases", "MySQL · MongoDB"),
+    (1, "tooling", "Git · VS Code"),
     (0, "contact", ""),
-    (1, "linkedin", "/in/mcperezes"),
-    (1, "github", "macu-dev"),
-    (1, "timezone", "UTC-3 · Rosario"),
+    (1, "linkedin", "/in/dianacejas"),
+    (1, "github", "dianacejas"),
+    (1, "timezone", "UTC-3 · Santiago del Estero"),
 ]
 
 THEMES = {
@@ -110,7 +110,7 @@ def normalize_logo(image: Image.Image) -> Image.Image:
     alpha = icon.getchannel("A")
     if alpha.getextrema() == (255, 255):
         # Remove only light pixels connected to the canvas edge. This keeps light
-        # details enclosed by a dark outline (for example, Linux's belly) opaque.
+        # details enclosed by a dark outline (for example, a logo's inner fill) opaque.
         gray = np.asarray(ImageOps.grayscale(icon))
         background = edge_connected(gray >= 220)
         visible = ~background
@@ -338,9 +338,9 @@ def render_svg(
         '<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
         'aria-labelledby="title desc">',
-        "<title id=\"title\">Maria Claudia's live system profile</title>",
+        "<title id=\"title\">Diana Cejas's live system profile</title>",
         '<desc id="desc">Animated terminal profile with a dithered portrait and '
-        "DevOps tool silhouettes.</desc>",
+        "development tool silhouettes.</desc>",
         "<defs>",
         '<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">'
         f'<feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="{t["shadow"]}" '
@@ -473,7 +473,7 @@ def render_svg(
             f'stroke="{t["chrome"]}"/>',
             f'<text x="1062" y="111" text-anchor="middle" fill="{t["chrome"]}" '
             'font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="13" '
-            'font-weight="700">@macu-dev</text>',
+            'font-weight="700">@dianacejas</text>',
         ]
     )
 
