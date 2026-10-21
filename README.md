@@ -29,9 +29,9 @@
 
 <br>
 
-<div align="center">
-
 ## `$ cat tech-stack.yaml`
+
+<div align="center">
 
 <table border="1" cellpadding="14" bgcolor="#17171c">
   <thead>
