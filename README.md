@@ -112,5 +112,5 @@
 <br>
 
 <div align="center">
-<sub>Hecho con 💗 y mucho ☕ desde Santiago del Estero, Argentina · @dianacejas</sub>
+<sub>Hecho con 💗 y mucho ☕ desde Argentina · @dianacejas</sub>
 </div>
